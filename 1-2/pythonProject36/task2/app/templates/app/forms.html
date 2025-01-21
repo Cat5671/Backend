@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form method="get">
+    {% csrf_token %}
+    <input type="text" name="cat_name">
+    <button type="submit">Поиск по кличке</button>
+  </form>
+  <form method="get">
+    {% csrf_token %}
+    <input type="text" name="cat_breed">
+    <button type="submit">Поиск по породе</button>
+  </form>
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="cat_name">
+    <input type="text" name="cat_breed">
+    <button type="submit">Добавить кота</button>
+  </form>
+</body>
+</html>

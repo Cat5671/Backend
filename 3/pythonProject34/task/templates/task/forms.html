@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for message in messages %}
+    <div class="message {{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    <form method="get" action="/room/">
+        <input type="text" name="name">
+        <button type="submit">Проверить</button>
+    </form>
+    <form method="post" action="/room/">
+        <input type="text" name="new-name">
+        <button type="submit">Напиши имя</button>
+    </form>
+</body>
+</html>
