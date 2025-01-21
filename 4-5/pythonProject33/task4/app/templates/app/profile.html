@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span>Ваше имя: {{username}}</span>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="new-name">
+        <button type="submit">Изменить имя</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Удалить аккаунт</button>
+    </form>
+</body>
+</html>
