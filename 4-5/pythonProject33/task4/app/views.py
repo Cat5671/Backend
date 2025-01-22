@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
+from .models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -33,7 +33,7 @@ def register(request): # Создание пользователя
             messages.error(request, 'Имя занято')
         else:
             User.objects.create_user(username=username, password=password)
-            return redirect(profile)
+            return redirect(log)
     return render(request, "app/registration.html")
 
 
