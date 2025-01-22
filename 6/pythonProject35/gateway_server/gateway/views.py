@@ -1,9 +1,10 @@
 from django.http import JsonResponse
 import requests
+from django.conf import settings
 
 
 def pro_req(request):
     try:
-        return JsonResponse(requests.get("http://127.0.0.1:8000/").json())
+        return JsonResponse(requests.get(settings.URL_FIRST_SERVER).json())
     except requests.RequestException as event:
         return JsonResponse({'error': str(event)}, status=500)
